@@ -11,16 +11,16 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
 
-	private final com.neperix.hobnob.posting.ArticleService articleService;
+  private final com.neperix.hobnob.posting.ArticleService articleService;
 
-	public void submit(String title, String text, Long authorId) {
-		this.articleService.submitArticle(title, text, authorId);
-	}
+  public void submit(String title, String text, Long authorId) {
+    this.articleService.submitArticle(title, text, authorId);
+  }
 
-	@Override
-	public List<Article> list() {
-		return this.articleService.list().stream().map(a -> new Article(a.getTitle(), a.getText(), a.getAuthorId()))
-		    .collect(Collectors.toList());
-	}
+  @Override
+  public List<Article> list() {
+    return this.articleService.list().stream().map(a -> new Article(a.getTitle(), a.getText(), a.getAuthorId()))
+        .collect(Collectors.toList());
+  }
 
 }

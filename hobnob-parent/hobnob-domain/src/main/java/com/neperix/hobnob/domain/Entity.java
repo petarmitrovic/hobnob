@@ -10,5 +10,5 @@ public class Entity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-  protected Long id;
+	protected Long id;
 }

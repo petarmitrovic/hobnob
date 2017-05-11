@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Article {
 
-	private String title;
+  private String title;
   private String text;
   private Long authorId;
 }

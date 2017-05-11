@@ -17,12 +17,12 @@ import com.neperix.hobnob.posting.ArticleService;
 @SpringBootApplication
 public class HobnobBoot {
 
-	@Bean
-	public ArticleService articleService(ArticleRepository articleRepository) {
-		return new ArticleService(articleRepository);
-	}
-	
-	public static void main(String[] args) {
-		SpringApplication.run(HobnobBoot.class, args);
-	}
+  @Bean
+  public ArticleService articleService(ArticleRepository articleRepository) {
+    return new ArticleService(articleRepository);
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(HobnobBoot.class, args);
+  }
 }

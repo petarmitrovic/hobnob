@@ -19,17 +19,17 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ArticleController {
 
-	@Autowired
-	private final ArticleService articleService;
-	
-	@GetMapping
-	List<Article> list() {
-		return this.articleService.list();
-	}
-	
-	@PostMapping
-	ResponseEntity<Boolean> save(@RequestBody ArticleCommand command) {
-		this.articleService.submit(command.getTitle(), command.getText(), 1L);
-		return new ResponseEntity<Boolean>(Boolean.TRUE, HttpStatus.CREATED);
-	}
+  @Autowired
+  private final ArticleService articleService;
+
+  @GetMapping
+  List<Article> list() {
+    return this.articleService.list();
+  }
+
+  @PostMapping
+  ResponseEntity<Boolean> save(@RequestBody ArticleCommand command) {
+    this.articleService.submit(command.getTitle(), command.getText(), 1L);
+    return new ResponseEntity<Boolean>(Boolean.TRUE, HttpStatus.CREATED);
+  }
 }

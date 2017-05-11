@@ -9,8 +9,8 @@ import com.neperix.hobnob.posting.api.ArticleService;
 @Configuration
 public class PostingApiInProcessConfig {
 
-	@Bean
-	public ArticleService articleServiceApi(com.neperix.hobnob.posting.ArticleService articleService) {
-		return new ArticleServiceImpl(articleService);
-	}
+  @Bean
+  public ArticleService articleServiceApi(com.neperix.hobnob.posting.ArticleService articleService) {
+    return new ArticleServiceImpl(articleService);
+  }
 }

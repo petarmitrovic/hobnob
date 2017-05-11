@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 class ArticleCommand {
 
-	private String title;
-	private String text;
+  private String title;
+  private String text;
 }

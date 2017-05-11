@@ -15,7 +15,7 @@ public class Article extends com.neperix.hobnob.domain.Entity {
   private String title;
   private String text;
   private Long authorId;
-  
+
   protected Article() {
     // Needed for ORM
   }
