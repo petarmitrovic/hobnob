@@ -29,4 +29,5 @@ and can be overriden by providing an external config poperties or config file (h
 ## Application Endpoints
 
 Applicatioin context root http://localhost:8080
-Swagger docs: TBD
+
+Swagger docs: http://localhost:8080/swagger-ui.html
