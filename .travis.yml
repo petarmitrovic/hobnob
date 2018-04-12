@@ -3,4 +3,4 @@ addons:
   sonarcloud:
     organization: "petarmitrovic-github" # the key of the org you chose at step #3
 script:
-  - sonar-scanner
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
