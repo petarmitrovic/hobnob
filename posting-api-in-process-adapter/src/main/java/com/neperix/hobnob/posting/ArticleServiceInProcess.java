@@ -9,7 +9,7 @@ import com.neperix.hobnob.posting.api.ArticleService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class ArticleServiceImpl implements ArticleService {
+public class ArticleServiceInProcess implements ArticleService {
 
   private final com.neperix.hobnob.posting.ArticleService articleService;
 
