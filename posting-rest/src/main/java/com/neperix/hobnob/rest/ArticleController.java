@@ -2,7 +2,6 @@ package com.neperix.hobnob.rest;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ArticleController {
 
-  @Autowired
   private final ArticleService articleService;
 
   @GetMapping
@@ -30,7 +28,8 @@ public class ArticleController {
   }
 
   @PostMapping
-  ResponseEntity<Boolean> submitAnArticle(ArticleCommand command) {
+  ResponseEntity<Boolean> submitAnArticle(@RequestBody ArticleCommand command) {
+
     this.articleService.submit(command.getTitle(), command.getText(), 1L);
     return new ResponseEntity<>(Boolean.TRUE, HttpStatus.CREATED);
   }
