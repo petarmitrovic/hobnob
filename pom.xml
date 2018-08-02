@@ -24,12 +24,20 @@
     <module>posting-domain-rdbms-adapter</module>
     <module>posting-rest</module>
     <module>application</module>
+    <module>iam</module>
+    <module>iam-neo4j-adapter</module>
+    <module>iam-neo4j-adapter-int-test</module>
   </modules>
 
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
     </dependency>
   </dependencies>
 
@@ -63,6 +71,16 @@
       <dependency>
         <groupId>com.neperix.hobnob</groupId>
         <artifactId>posting-rest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.neperix.hobnob</groupId>
+        <artifactId>iam</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.neperix.hobnob</groupId>
+        <artifactId>iam-neo4j-adapter</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
