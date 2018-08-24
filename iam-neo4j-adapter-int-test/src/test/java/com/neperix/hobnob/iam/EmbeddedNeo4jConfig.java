@@ -44,7 +44,7 @@ class EmbeddedNeo4jConfig {
 //                .loadPropertiesFromFile(path.toAbsolutePath().toString())
                 .setConfig(bolt.enabled, "true")
                 .setConfig(bolt.type, "BOLT")
-                .setConfig(bolt.listen_address, "0.0.0.0:7687")
+                .setConfig(bolt.listen_address, "0.0.0.0:7688")
                 .setConfig(bolt.encryption_level, BoltConnector.EncryptionLevel.OPTIONAL.toString())
 //                .setConfig(ShellSettings.remote_shell_enabled, Settings.TRUE)
                 .newGraphDatabase();
@@ -57,6 +57,6 @@ class EmbeddedNeo4jConfig {
     @Profile("it")
     @Bean
     Driver neo4jDriver(GraphDatabaseService dbService) {
-        return GraphDatabase.driver("bolt://127.0.0.1:7687");
+        return GraphDatabase.driver("bolt://127.0.0.1:7688");
     }
 }

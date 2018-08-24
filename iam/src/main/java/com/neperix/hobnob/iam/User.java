@@ -1,21 +1,29 @@
 package com.neperix.hobnob.iam;
 
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import lombok.Builder;
+import lombok.Getter;
 
 /**
  * @author petarmitrovic
  */
+@Getter
 @Builder
-public class User {
+class User {
 
     private Long id;
+    private String uuid;
     private String username;
     private String email;
-    private HashSet<String> roles;
+    private Set<String> roles;
 
-    public String getUsername() {
-        return username;
+    void setRoles(Set<Long> r) {
+        this.roles = Optional.ofNullable(r)
+                .map(set -> set.stream().map(String::valueOf).collect(Collectors.toSet()))
+                .orElse(Collections.emptySet());
     }
 }

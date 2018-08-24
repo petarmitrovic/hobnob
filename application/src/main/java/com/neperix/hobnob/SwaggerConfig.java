@@ -1,4 +1,4 @@
-package com.neperix.hobnob.config;
+package com.neperix.hobnob;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
