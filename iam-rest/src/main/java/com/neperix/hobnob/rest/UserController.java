@@ -14,9 +14,6 @@ import com.neperix.hobnob.iam.api.UserApi;
 
 import lombok.AllArgsConstructor;
 
-/**
- * @author petarmitrovic
- */
 @RestController
 @RequestMapping("/users")
 @AllArgsConstructor
@@ -31,7 +28,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity newUser(@RequestBody CreateUserCommand user) {
-        userApi.create(user.getUuid(), user.getUsername(), user.getEmail(), user.getRoles());
+        userApi.create(user.getUsername(), user.getEmail(), user.getRoles());
         return ResponseEntity.ok("created");
     }
 }

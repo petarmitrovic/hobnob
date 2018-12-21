@@ -2,7 +2,6 @@ package com.neperix.hobnob.iam;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
@@ -37,11 +36,6 @@ public class Neo4jUserRepositoryTest {
 
         graphDb.execute("CREATE (p:Person { name: 'Petar Mitrovic', username: 'petar.mitrovic', email: 'petar.mitrovic@hobnob.com', role: 'Developer' })");
         graphDb.execute("CREATE (p:Person { name: 'Ragnar Lothbrok', username: 'ragnar.lothbrok', email: 'ragnar.lothbrok@hobnob.com', role: 'QA' })");
-    }
-
-    @Test
-    public void test() {
-        assertThat(graphDb, notNullValue());
     }
 
     @Test

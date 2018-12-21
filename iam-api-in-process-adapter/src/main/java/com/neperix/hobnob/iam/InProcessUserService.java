@@ -34,12 +34,12 @@ public class InProcessUserService implements UserApi {
     }
 
     @Override
-    public User findByUsername(String username) {
-        return null;
+    public Optional<User> findByUsername(String username) {
+        return Optional.empty();
     }
 
     @Override
-    public void create(String uuid, String username, String email, Set<String> roles) {
-        this.userService.createNew(uuid, username, email, roles);
+    public void create(String username, String email, Set<String> roles) {
+        this.userService.createNew(username, email, roles);
     }
 }

@@ -10,7 +10,7 @@ import java.util.Set;
 public interface UserApi {
 
     /**
-     * Get all the users.
+     * Gets all the users.
      *
      * @return The list containing all users.
      */
@@ -31,7 +31,13 @@ public interface UserApi {
      * @param username The username to search user for.
      * @return The user matching the given username, or an Optional.empty() if the user couldn't be found.
      */
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
-    void create(String uuid, String username, String email, Set<String> roles);
+    /**
+     * Creates a new user based on the given details.
+     * @param username The username
+     * @param email The email
+     * @param roles The roles
+     */
+    void create(String username, String email, Set<String> roles);
 }

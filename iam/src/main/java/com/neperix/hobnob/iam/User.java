@@ -21,8 +21,8 @@ class User {
     private String email;
     private Set<String> roles;
 
-    void setRoles(Set<Long> r) {
-        this.roles = Optional.ofNullable(r)
+    void setRoles(Set<Long> roles) {
+        this.roles = Optional.ofNullable(roles)
                 .map(set -> set.stream().map(String::valueOf).collect(Collectors.toSet()))
                 .orElse(Collections.emptySet());
     }
