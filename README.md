@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/petarmitrovic/hobnob.svg?branch=develop)](https://travis-ci.org/petarmitrovic/hobnob)
+[![Maintainability](https://api.codeclimate.com/v1/badges/56673c309b7f113cbb71/maintainability)](https://codeclimate.com/github/petarmitrovic/hobnob/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/56673c309b7f113cbb71/test_coverage)](https://codeclimate.com/github/petarmitrovic/hobnob/test_coverage)
 
 # Hobnob - Simple blogging platform
 
