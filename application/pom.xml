@@ -11,7 +11,7 @@
   <dependencies>
     <dependency>
       <groupId>com.neperix.hobnob</groupId>
-      <artifactId>posting-rest</artifactId>
+      <artifactId>api-gateway</artifactId>
     </dependency>
     <dependency>
       <groupId>com.neperix.hobnob</groupId>
@@ -20,6 +20,18 @@
     <dependency>
       <groupId>com.neperix.hobnob</groupId>
       <artifactId>posting-domain-rdbms-adapter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.neperix.hobnob</groupId>
+      <artifactId>iam-rest</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.neperix.hobnob</groupId>
+      <artifactId>iam-api-in-process-adapter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.neperix.hobnob</groupId>
+      <artifactId>iam-neo4j-adapter</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
