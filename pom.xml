@@ -22,7 +22,7 @@
         <module>posting-api-in-process-adapter</module>
         <module>hobnob-domain</module>
         <module>posting-domain-rdbms-adapter</module>
-        <module>posting-rest</module>
+        <module>api-gateway</module>
         <module>application</module>
         <module>iam</module>
         <module>iam-neo4j-adapter</module>
@@ -73,7 +73,7 @@
             </dependency>
             <dependency>
                 <groupId>com.neperix.hobnob</groupId>
-                <artifactId>posting-rest</artifactId>
+                <artifactId>api-gateway</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
