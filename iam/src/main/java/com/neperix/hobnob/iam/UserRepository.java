@@ -1,6 +1,7 @@
 package com.neperix.hobnob.iam;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author petarmitrovic
@@ -9,9 +10,7 @@ interface UserRepository {
 
     List<User> findAll();
 
-    List<User> findById(Long id);
-
-    List<User> findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     void save(User user);
 }
