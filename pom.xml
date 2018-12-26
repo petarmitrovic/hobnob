@@ -17,19 +17,18 @@
     </properties>
 
     <modules>
+        <module>application</module>
+        <module>api-gateway</module>
+        <module>hobnob-domain</module>
         <module>posting-domain</module>
         <module>posting-api</module>
         <module>posting-api-in-process-adapter</module>
-        <module>hobnob-domain</module>
         <module>posting-domain-rdbms-adapter</module>
-        <module>api-gateway</module>
-        <module>application</module>
         <module>iam</module>
         <module>iam-neo4j-adapter</module>
         <module>iam-neo4j-adapter-int-test</module>
         <module>iam-api</module>
         <module>iam-api-in-process-adapter</module>
-        <module>iam-rest</module>
     </modules>
 
     <dependencies>
