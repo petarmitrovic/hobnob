@@ -23,10 +23,6 @@
     </dependency>
     <dependency>
       <groupId>com.neperix.hobnob</groupId>
-      <artifactId>iam-rest</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.neperix.hobnob</groupId>
       <artifactId>iam-api-in-process-adapter</artifactId>
     </dependency>
     <dependency>
