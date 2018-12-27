@@ -16,7 +16,6 @@ import lombok.Getter;
 class User {
 
     private Long id;
-    private String uuid;
     private String username;
     private String email;
     private Set<String> roles;
