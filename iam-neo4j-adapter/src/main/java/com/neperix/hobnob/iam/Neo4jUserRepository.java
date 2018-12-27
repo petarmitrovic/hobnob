@@ -22,7 +22,6 @@ public class Neo4jUserRepository implements UserRepository {
 
     private static User recToUser(Record rec) {
         return User.builder()
-                .uuid(rec.get("p").get("uuid").asString())
                 .username(rec.get("p").get("username").asString())
                 .email(rec.get("p").get("email").asString())
                 .build();

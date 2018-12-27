@@ -2,7 +2,6 @@ package com.neperix.hobnob.iam;
 
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
@@ -23,7 +22,6 @@ class UserService {
 
     void createNew(String username, String email, Set<String> roles) {
         User newUser = User.builder()
-                .uuid(UUID.randomUUID().toString())
                 .username(username)
                 .email(email)
                 .roles(roles)

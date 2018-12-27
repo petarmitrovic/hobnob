@@ -24,7 +24,7 @@ public class InProcessUserService implements UserApi {
     @Override
     public List<User> all() {
         return this.userService.allUsers().stream()
-                .map(user -> new User(user.getUuid(), user.getUsername(), user.getRoles()))
+                .map(user -> new User(user.getUsername(), user.getRoles()))
                 .collect(Collectors.toList());
     }
 
