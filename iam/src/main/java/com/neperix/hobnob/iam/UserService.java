@@ -1,15 +1,13 @@
 package com.neperix.hobnob.iam;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 
-/**
- * @author petarmitrovic
- */
 @Component
 @AllArgsConstructor
 class UserService {
@@ -20,12 +18,16 @@ class UserService {
         return this.userRepository.findAll();
     }
 
-    void createNew(String username, String email, Set<String> roles) {
+    Optional<User> singleUser(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    User createNew(String username, String email, Set<String> roles) {
         User newUser = User.builder()
                 .username(username)
                 .email(email)
                 .roles(roles)
                 .build();
-        this.userRepository.save(newUser);
+        return this.userRepository.save(newUser);
     }
 }

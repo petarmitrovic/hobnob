@@ -1,5 +1,6 @@
 package com.neperix.hobnob.iam;
 
+import static com.spotify.hamcrest.optional.OptionalMatchers.emptyOptional;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
@@ -57,6 +58,12 @@ public class Neo4jUserRepositoryTest {
                         withEmail("petar.mitrovic@hobnob.com")
                 )
         );
+    }
+
+    @Test
+    public void itShouldReturnEmptyOptionalIfUserCanNotBeFound() {
+        Optional<User> user = userRepository.findByUsername("petar.mitro");
+        assertThat(user, emptyOptional());
     }
 
     @Test

@@ -35,11 +35,13 @@ public class InProcessUserService implements UserApi {
 
     @Override
     public Optional<User> findByUsername(String username) {
-        return Optional.empty();
+        return this.userService.singleUser(username)
+                .map(user -> new User(user.getUsername(), user.getRoles()));
     }
 
     @Override
-    public void create(String username, String email, Set<String> roles) {
-        this.userService.createNew(username, email, roles);
+    public User create(String username, String email, Set<String> roles) {
+        com.neperix.hobnob.iam.User user = this.userService.createNew(username, email, roles);
+        return new User(user.getUsername(), user.getRoles());
     }
 }

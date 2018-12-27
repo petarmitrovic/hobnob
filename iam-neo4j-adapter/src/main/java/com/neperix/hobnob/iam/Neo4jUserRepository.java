@@ -39,16 +39,33 @@ public class Neo4jUserRepository implements UserRepository {
                 "MATCH (p:Person) WHERE p.username = $username RETURN p",
                 Collections.singletonMap("username", username));
 
+        if (!result.hasNext()) {
+            return Optional.empty();
+        }
+
         return Optional.ofNullable(result.single())
                 .map(Neo4jUserRepository::recToUser);
     }
 
     @Override
-    public void save(User user) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("username", user.getUsername());
-        params.put("email", user.getEmail());
+    public User save(User user) {
 
-        driver.session().run("CREATE (n:Person {username: $username, email: $email}) RETURN n", params);
+        // TODO Check if this can be solved on Neo4j leve by setting a unique index on User's username
+//        Optional<User> existing = this.findByUsername(user.getUsername());
+//        if (existing.isPresent()) {
+//            throw new UserNotCreatedException("User with the same username '" + user.getUsername() + "' already exists");
+//        }
+
+        try {
+            Map<String, Object> params = new HashMap<>();
+            params.put("username", user.getUsername());
+            params.put("email", user.getEmail());
+
+            StatementResult result = driver.session().run(
+                    "CREATE (p:Person {username: $username, email: $email}) RETURN p", params);
+            return recToUser(result.next());
+        } catch (Exception ex) {
+            throw new UserNotCreatedException("User not created", ex);
+        }
     }
 }

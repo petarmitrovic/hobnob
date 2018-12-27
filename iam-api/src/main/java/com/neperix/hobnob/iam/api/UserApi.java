@@ -35,9 +35,11 @@ public interface UserApi {
 
     /**
      * Creates a new user based on the given details.
+     *
      * @param username The username
      * @param email The email
      * @param roles The roles
+     * @return Newly created user instance
      */
-    void create(String username, String email, Set<String> roles);
+    User create(String username, String email, Set<String> roles);
 }
