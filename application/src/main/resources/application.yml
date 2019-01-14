@@ -11,3 +11,11 @@ spring:
   profiles:
     active:
     - posting.in-process
+
+hobnob:
+  security:
+    jwt:
+      issuer: hobnob
+      secret: hobnob
+      time-to-live-in-hours: 168
+

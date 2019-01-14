@@ -8,9 +8,6 @@ import java.util.stream.Collectors;
 import lombok.Builder;
 import lombok.Getter;
 
-/**
- * @author petarmitrovic
- */
 @Getter
 @Builder
 class User {
@@ -24,5 +21,9 @@ class User {
         this.roles = Optional.ofNullable(roles)
                 .map(set -> set.stream().map(String::valueOf).collect(Collectors.toSet()))
                 .orElse(Collections.emptySet());
+    }
+
+    public static class UserBuilder {
+        private Set<String> roles = Collections.emptySet();
     }
 }

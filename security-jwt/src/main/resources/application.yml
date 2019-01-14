@@ -1,0 +1,6 @@
+hobnob:
+  security:
+    jwt:
+      secret: hobnob
+      issuer: hobnob
+      timeToLiveInHours: 2

@@ -29,6 +29,10 @@
         <module>iam-neo4j-adapter-int-test</module>
         <module>iam-api</module>
         <module>iam-api-in-process-adapter</module>
+        <module>security</module>
+        <module>security-spring-security-adapter</module>
+        <module>security-jwt</module>
+        <module>security-iam-adapter</module>
     </modules>
 
     <dependencies>
@@ -40,6 +44,11 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -93,6 +102,26 @@
             <dependency>
                 <groupId>com.neperix.hobnob</groupId>
                 <artifactId>iam-neo4j-adapter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.neperix.hobnob</groupId>
+                <artifactId>security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.neperix.hobnob</groupId>
+                <artifactId>security-spring-security-adapter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.neperix.asclepius</groupId>
+                <artifactId>security-jwt</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.neperix.hobnob</groupId>
+                <artifactId>security-iam-adapter</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
