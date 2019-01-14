@@ -72,7 +72,7 @@ public class JwtAuthenticationControllerTest {
                 .withExpiresAt(Date.from(ONE_HOUR_AGO.atZone(ZoneId.systemDefault()).toInstant()))
                 .sign(alg);
 
-        mvc.perform(get("/refresh").header("Authorization", oldToken))
+        mvc.perform(get("/refresh").header("Authorization", "Bearer " + oldToken))
                 .andExpect(status().isOk())
                 .andExpect(content()
                     .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
